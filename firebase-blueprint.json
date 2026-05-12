@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "UserProgress": {
+      "title": "User Progress",
+      "description": "Stores the last completed level of a user",
+      "type": "object",
+      "properties": {
+        "lastLevel": {
+          "type": "integer",
+          "description": "Index of the last completed level"
+        }
+      },
+      "required": ["lastLevel"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProgress",
+      "description": "User progress documents"
+    }
+  }
+}
